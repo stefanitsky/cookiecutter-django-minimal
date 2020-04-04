@@ -1,0 +1,7 @@
+# IDE
+.idea/
+
+# Environment
+env/
+venv/
+.env
