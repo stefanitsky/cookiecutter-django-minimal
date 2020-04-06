@@ -1,7 +1,8 @@
 {
   "project_name": "My Project",
-  "project_slug": "project_name_in_lowercase",
-  "full_name": "Alexandr Stefanitsky-Mozdor",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+  "author": "Alexandr Stefanitsky-Mozdor",
   "email": "stefanitsky.mozdor@gmail.com",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "timezone": "UTC"
 }
