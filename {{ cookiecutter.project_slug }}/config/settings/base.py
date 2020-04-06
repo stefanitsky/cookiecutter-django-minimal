@@ -6,7 +6,7 @@ class Base(configurations.Configuration):
     # Path configurations
     # /{{ cookiecutter.project_slug }}/settings/base.py - 3
     ROOT_DIR = environ.Path(__file__) - 3
-    APPS_DIR = ROOT_DIR / "{{ cookiecutter.project_slug }}"
+    APPS_DIR = ROOT_DIR.path("{{ cookiecutter.project_slug }}")
 
     # Environment
     env = environ.Env()
@@ -30,7 +30,7 @@ class Base(configurations.Configuration):
     # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
     USE_TZ = True
     # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
-    LOCALE_PATHS = [str(ROOT_DIR / "locale")]
+    LOCALE_PATHS = [str(ROOT_DIR.path("locale"))]
     ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=["*"])
     # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
     ROOT_URLCONF = '{{ cookiecutter.project_slug }}.urls'
@@ -102,7 +102,7 @@ class Base(configurations.Configuration):
     # Databases
     # ------------------------------------------------------------------------------
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = {"default": env.db("DATABASE_URL")}
+    DATABASES = {"default": env.db("DATABASE_URL", default="postgresql://postgres:@db:5432/postgres")}
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
     # Authentication
@@ -133,10 +133,10 @@ class Base(configurations.Configuration):
     # Staticfiles
     # ------------------------------------------------------------------------------
     # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-    STATIC_ROOT = str(ROOT_DIR / "staticfiles")
+    STATIC_ROOT = str(ROOT_DIR.path("staticfiles"))
     # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
     STATIC_URL = "/static/"
-    STATICFILES_DIRS = [str(APPS_DIR / "static")]
+    STATICFILES_DIRS = [str(APPS_DIR.path("static"))]
     # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
     STATICFILES_FINDERS = [
         "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -146,14 +146,14 @@ class Base(configurations.Configuration):
     # Media
     # ------------------------------------------------------------------------------
     # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-    MEDIA_ROOT = str(APPS_DIR / "media")
+    MEDIA_ROOT = str(APPS_DIR.path("media"))
     # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
     MEDIA_URL = "/media/"
 
     # Fixtures
     # ------------------------------------------------------------------------------
     # https://docs.djangoproject.com/en/dev/ref/settings/#fixture-dirs
-    FIXTURE_DIRS = [str(APPS_DIR / "fixtures")]
+    FIXTURE_DIRS = [str(APPS_DIR.path("fixtures"))]
 
     # Security
     # ------------------------------------------------------------------------------
