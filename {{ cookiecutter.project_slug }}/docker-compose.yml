@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:11.6
+  web:
+    restart: always
+    image: web
+    build: .
+    command: bash scripts/run_server.sh
+    environment:
+      - DJANGO_DEBUG
+      - DJANGO_SECRET_KEY
+      - DJANGO_CONFIGURATION
+      - DJANGO_ALLOWED_HOSTS
+      - DJANGO_ADMIN_URL
+      - DATABASE_URL
+    volumes:
+      - "./:/code"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
