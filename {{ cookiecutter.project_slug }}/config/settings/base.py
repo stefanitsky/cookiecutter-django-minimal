@@ -33,9 +33,9 @@ class Base(configurations.Configuration):
     LOCALE_PATHS = [str(ROOT_DIR.path("locale"))]
     ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=["*"])
     # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
-    ROOT_URLCONF = '{{ cookiecutter.project_slug }}.urls'
+    ROOT_URLCONF = "config.urls"
     # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-    WSGI_APPLICATION = '{{ cookiecutter.project_slug }}.wsgi.application'
+    WSGI_APPLICATION = "config.wsgi.application"
     # Custom admin url
     ADMIN_URL = env("DJANGO_ADMIN_URL", default="admin/")
 
@@ -75,8 +75,7 @@ class Base(configurations.Configuration):
             # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-            'DIRS': [],
-            'APP_DIRS': True,
+            'DIRS': [APPS_DIR.path("templates")],
             'OPTIONS': {
                 # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
                 # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
@@ -103,14 +102,10 @@ class Base(configurations.Configuration):
     # ------------------------------------------------------------------------------
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
     DATABASES = {"default": env.db("DATABASE_URL", default="postgresql://postgres:@db:5432/postgres")}
-    DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
     # Authentication
     # https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
-    AUTHENTICATION_BACKENDS = [
-        "django.contrib.auth.backends.ModelBackend",
-        "allauth.account.auth_backends.AuthenticationBackend",
-    ]
+    AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
 
     # Passwords
     # ------------------------------------------------------------------------------
