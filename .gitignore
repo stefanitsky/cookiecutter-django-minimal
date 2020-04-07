@@ -5,3 +5,6 @@
 env/
 venv/
 .env
+
+# Sphinx documentation
+docs/_build/
