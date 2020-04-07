@@ -2,7 +2,14 @@
 cookiecutter-django-minimal
 ===========================
 
+.. image:: https://readthedocs.org/projects/cookiecutter-django-minimal/badge/?version=latest
+    :target: https://cookiecutter-django-minimal.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+
 A cookiecutter template for creating minimal Django apps, with configured settings for multiple environments.
+
+* Documentation: https://cookiecutter-django-minimal.readthedocs.io/en/latest/
 
 
 Highlights
