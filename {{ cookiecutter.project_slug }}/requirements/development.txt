@@ -1,3 +1,4 @@
 -r ./base.txt
 
 bump2version==1.0.0
+django-debug-toolbar==2.2
