@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from {{ cookiecutter.project_slug }} import views
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
+    path("", views.welcome_view, name="welcome"),
 ]
 
 if settings.DEBUG:
