@@ -7,3 +7,6 @@ services:
       context: .
       args:
         - REQUIREMENTS=production
+    environment:
+      - SENTRY_DSN
+      - DJANGO_SECURE_SSL_REDIRECT
