@@ -14,7 +14,7 @@ A cookiecutter template for creating minimal Django apps, with configured settin
 
 Highlights
 ----------
-* Minimal setup: only the most important.
+* Minimal setup: Django 3 with ASGI_ & PostgreSQL 11.6.
 * Preconfigured settings & compose files for multiple environments.
 * Configuration as in the RoR application for main app folder.
 
@@ -51,4 +51,4 @@ Makefile contains many convenient and useful commands. You can get a complete li
 .. _Usage: https://github.com/c4urself/bump2version#usage
 .. _sentry: https://docs.sentry.io/
 .. _RoR: https://rubyonrails.org/
-
+.. _ASGI: https://docs.djangoproject.com/en/3.0/topics/async/
