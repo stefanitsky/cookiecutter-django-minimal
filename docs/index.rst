@@ -6,10 +6,14 @@
 Welcome to Cookiecutter Django Minimal's documentation!
 =======================================================
 
+Contents:
+----------------
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   tutorial
+   features
+   readme
 
 
 Indices and tables
