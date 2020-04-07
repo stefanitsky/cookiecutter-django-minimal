@@ -21,4 +21,5 @@ TODO
 * [ ] Travis-CI ready-to-use with tests / linter / codecov.
 * [ ] Sphinx documentation with usage (step-by-step).
 * [ ] Configure test environment (django-nose, coverage).
-* [ ] Configure development environment (django-debug-toolbar)
+* [ ] Configure development environment (django-debug-toolbar).
+* [ ] Add user app.
