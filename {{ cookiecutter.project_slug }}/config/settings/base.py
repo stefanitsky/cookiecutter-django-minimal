@@ -34,8 +34,6 @@ class Base(configurations.Configuration):
     ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=["*"])
     # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
     ROOT_URLCONF = "config.urls"
-    # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-    WSGI_APPLICATION = "config.wsgi.application"
     # Custom admin url
     ADMIN_URL = env("DJANGO_ADMIN_URL", default="admin/")
 

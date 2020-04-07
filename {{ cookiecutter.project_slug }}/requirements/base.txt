@@ -1,5 +1,5 @@
 # Django
-Django==3.0.5
+Django[argon2]==3.0.5
 django-configurations==2.2
 django-environ==0.4.5
 whitenoise==5.0.1
