@@ -16,7 +16,7 @@ services:
       - DJANGO_ADMIN_URL
       - DATABASE_URL
     volumes:
-      - "./:/code"
+      - "./:/app"
     ports:
       - "8000:8000"
     depends_on:
