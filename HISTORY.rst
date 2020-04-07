@@ -2,6 +2,12 @@
 History
 =======
 
+0.2.0 (2020-04-07)
+------------------
+* Added ASGI docker image.
+* Added multiple docker-compose files for multiple envs.
+* Added make commands for docker-compose.
+
 0.1.0 (2020-04-07)
 ------------------
 * Project architecture changed to RoR like.
